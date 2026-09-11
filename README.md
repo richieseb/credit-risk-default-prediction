@@ -1,16 +1,25 @@
-# Credit Risk Default Prediction
+# Credit Risk Default Prediction: Enterprise-Grade Risk Assessment Pipeline
 
-A machine learning pipeline designed to predict loan default risk, featuring rigorous exploratory data analysis, class imbalance mitigation, and model optimization using financial metrics like PR-AUC and ROC-AUC.
+## Executive Summary & Business Context
+In the financial lending sector, predicting loan default risk with high precision is the cornerstone of capital preservation and portfolio health. Traditional retail lending workflows often rely on static rules or naive classification models that fail to capture complex, non-linear interactions between a borrower's financial profile and macroeconomic indicators. Furthermore, financial datasets are inherently skewed—default events represent a minority class, making standard accuracy metrics deceptive and dangerous. 
 
-## Project Overview
-Predicting credit default is critical for financial institutions to minimize risk while maintaining lending volume. This project implements an end-to-end data science workflow—from data cleaning and feature engineering to model comparison and threshold tuning.
+This project delivers a comprehensive, production-grade machine learning pipeline designed to predict credit default probabilities before loan issuance. By prioritizing advanced evaluation metrics like **Precision-Recall AUC (PR-AUC)** and **ROC-AUC**, alongside domain-driven feature engineering and cost-sensitive model tuning, this system minimizes financial exposure to high-risk applicants while safeguarding approval rates for creditworthy customers.
 
-## Project Structure
+---
+
+## Technical Architecture & Repository Layout
+The project follows a modular, scalable directory structure separating prototyping notebooks from production-ready source code and automated CI/CD validation pipelines.
+
 ```text
 credit-risk-prediction/
-├── .github/workflows/   # CI/CD linting and test automation
-├── data/                # Raw and processed datasets (ignored in git)
-├── notebooks/           # Jupyter notebooks for EDA and prototyping
-├── src/                 # Production-grade modular Python code
-├── requirements.txt     # Pinned package dependencies
-└── README.md            # Project documentation
+├── .github/
+│   └── workflows/
+│       └── ci.yml             # Automated syntax, linting, and unit test pipeline
+├── data/                      # Local data directory (excluded via .gitignore)
+├── notebooks/                 # Exploratory data analysis and feature prototyping
+│   ├── 01_eda.ipynb           # Statistical distribution and correlation tracking
+│   ├── 02_feature_engineering.ipynb # Imputation and derived financial ratios
+│   └── 03_model_baseline.ipynb# Multi-model benchmarking and validation
+├── src/                       # Production-grade Python modules
+├── requirements.txt           # Pinned dependency manifest
+└── README.md                  # Detailed technical documentation
